@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TaskBoard Académico</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="container">
+      <h1>TaskBoard Académico</h1>
+
+      <section class="form-section">
+        <form id="task-form">
+          <div class="field">
+            <label for="title">Título</label>
+            <input id="title" name="title" type="text" placeholder="Título de la tarea" />
+          </div>
+          <div class="field">
+            <label for="course">Curso</label>
+            <input id="course" name="course" type="text" placeholder="Curso" />
+          </div>
+          <div class="field">
+            <label for="priority">Prioridad</label>
+            <select id="priority" name="priority">
+              <option value="baja">Baja</option>
+              <option value="media" selected>Media</option>
+              <option value="alta">Alta</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button id="add-task" type="submit">Agregar tarea</button>
+            <span id="validation" class="validation" aria-live="polite"></span>
+          </div>
+        </form>
+      </section>
+
+      <section class="controls">
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">Todas</button>
+          <button class="filter-btn" data-filter="pending">Pendientes</button>
+          <button class="filter-btn" data-filter="completed">Completadas</button>
+        </div>
+        <div class="counters">
+          <span>Tareas pendientes: <strong id="count-pending">0</strong></span>
+          <span>Tareas completadas: <strong id="count-completed">0</strong></span>
+        </div>
+      </section>
+
+      <section id="tasks-area" class="tasks-area">
+        <!-- tarjetas se insertan aquí -->
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
